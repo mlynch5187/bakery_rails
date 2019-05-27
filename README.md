@@ -2,7 +2,7 @@
 
 This is a practice project.  It is meant to cover CRUD functions, relationships and routing.  There are 3 resources and 4 tables.  A baker has many recipes, but a recipe is written by only one baker.  A recipe can have many ingredients.  An ingredient can be used in many different recipes.
 
-* Clone, bundle, rake db:create
+* Clone, bundle, rake db:create,migrate
 
 * There are failing relationship tests.  Fix these first.  Validation tests are not present.  Add them if you feel like it and have time.
 
