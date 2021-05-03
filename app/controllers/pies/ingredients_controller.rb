@@ -1,5 +1,5 @@
 class Pies::IngredientsController < ApplicationController
-
-  def index; end
-
+  def index
+    @ingredients = Ingredient.all
+  end
 end
