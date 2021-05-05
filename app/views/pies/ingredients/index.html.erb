@@ -3,3 +3,5 @@
 <% @ingredients.each do |ingredient| %>
   <%= link_to "#{ingredient.name}", "/pies/ingredients/#{ingredient.id}" %>
 <% end %>
+
+<%= link_to "New Ingredient", "/pies/ingredients/new" %>
