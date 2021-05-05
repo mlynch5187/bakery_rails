@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "Pie Ingredients Show Page", type: :feature do
   before(:each) do
-    @salt = Ingredient.create(name: "Salt", type: "Condiment")
-    @pepper = Ingredient.create(name: "Pepper", type: "Condiment")
-    @pepper = Ingredient.create(name: "Butter", type: "Oil")
+    @salt = Ingredient.create(name: "Salt", kind: "Condiment")
+    @pepper = Ingredient.create(name: "Pepper", kind: "Condiment")
+    @pepper = Ingredient.create(name: "Butter", kind: "Oil")
     visit "/pies/ingredients"
   end
 
