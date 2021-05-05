@@ -11,7 +11,7 @@ RSpec.describe "Pie Ingredients Show Page", type: :feature do
   it "It allows me to click on an ingredient" do
     expect(page).to have_link("Salt")
     click_link("Salt")
-    expect(current_path).to_eq("/pies/ingredients/1")
+    expect(current_path).to eq("/pies/ingredients/#{@salt.id}")
     expect(page).to have_content("This ingredient is called Salt")
     expect(page).to have_content("This ingredient is a Condiment")
   end
