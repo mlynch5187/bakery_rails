@@ -13,6 +13,9 @@ class Pies::IngredientsController < ApplicationController
     ingredient = Ingredient.create(ingredient_params)
     if ingredient.save
       redirect_to "/pies/ingredients"
+    else
+      flash[:error] = ingredient.errors.full_messages.to_sentence
+      render :new
     end
   end
 
