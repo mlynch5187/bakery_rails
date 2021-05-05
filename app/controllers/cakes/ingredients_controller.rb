@@ -1,3 +1,5 @@
 class Cakes::IngredientsController < ApplicationController
-  def index; end
+  def index
+    @ingredients = Ingredient.all
+  end
 end
