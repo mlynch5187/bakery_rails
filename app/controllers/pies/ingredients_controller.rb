@@ -22,6 +22,6 @@ class Pies::IngredientsController < ApplicationController
   private
 
   def ingredient_params
-    params.permit(:name, :kind)
+    params.require(:name, :kind)
   end
 end

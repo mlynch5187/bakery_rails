@@ -25,16 +25,12 @@ RSpec.describe "Pie Ingredients New Page", type: :feature do
   it "It allows me to create a new ingredient only if all fields are filled" do
     click_link("New Ingredient")
 
-    name = ""
-    kind = "Oil"
-
-    fill_in :name, with: name
-    fill_in :kind, with: kind
+    fill_in :name, with: "Butter"
+    fill_in :kind, with: ""
 
     click_on "Create New Ingredient"
 
     expect(current_path).to eq("/pies/ingredients/new")
-    save_and_open_page
     expect(page).to have_content("Bob")
   end
 end
