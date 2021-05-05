@@ -15,13 +15,13 @@ class Pies::IngredientsController < ApplicationController
       redirect_to "/pies/ingredients"
     else
       flash[:error] = ingredient.errors.full_messages.to_sentence
-      render :new
+      redirect_to "/pies/ingredients/new"
     end
   end
 
   private
 
   def ingredient_params
-    params.require(:name, :kind)
+    params.permit(:name, :kind)
   end
 end
