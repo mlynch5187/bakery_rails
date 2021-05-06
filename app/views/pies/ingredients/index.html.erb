@@ -1,9 +1,9 @@
 <h1>Pie Ingredients</h1>
 
 <% @ingredients.each do |ingredient| %>
-  <%= link_to "#{ingredient.name}", "/pies/ingredients/#{ingredient.id}" %>
-  <%= link_to "Delete #{ingredient.name}", "/pies/ingredients", method: :delete %>
-
+  <p><%= link_to "#{ingredient.name}", "/pies/ingredients/#{ingredient.id}" %></p>
+  <p><%= "Kind: #{ingredient.kind}" %></p>
+  <p><%= link_to "Delete #{ingredient.name}", "/pies/ingredients", method: :delete %></p>
 <% end %>
 
 <%= link_to "New Ingredient", "/pies/ingredients/new" %>
