@@ -14,8 +14,8 @@ class Pies::IngredientsController < ApplicationController
     if ingredient.save
       redirect_to "/pies/ingredients"
     else
-      redirect_to "/pies/ingredients/new"
       flash[:notice] = "Please fill out all fields"
+      redirect_to "/pies/ingredients/new"
     end
   end
 
