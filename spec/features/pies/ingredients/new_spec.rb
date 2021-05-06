@@ -41,7 +41,7 @@ RSpec.describe "Pie Ingredients New Page", type: :feature do
     fill_in :name, with: "Butter"
     fill_in :kind, with: "Oil"
 
-    click_on "Create New Ingredient"
+    click_on "Create New Ingredient"    
 
     expect(current_path).to eq("/pies/ingredients/new")
     expect(page).to have_content("Please fill out all fields and give the ingredient a unique name")
