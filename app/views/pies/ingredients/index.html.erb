@@ -2,6 +2,8 @@
 
 <% @ingredients.each do |ingredient| %>
   <%= link_to "#{ingredient.name}", "/pies/ingredients/#{ingredient.id}" %>
+  <%= link_to "Delete #{ingredient.name}", "/pies/ingredients", method: :delete %>
+
 <% end %>
 
 <%= link_to "New Ingredient", "/pies/ingredients/new" %>
