@@ -8,6 +8,7 @@ RSpec.describe "Pie Ingredients Index", type: :feature do
   end
 
   it "It shows a list of ingredients" do
+    save_and_open_page
     expect(page).to have_content("Salt")
     expect(page).to have_content("Condiment")
     expect(page).to have_content("Pepper")
