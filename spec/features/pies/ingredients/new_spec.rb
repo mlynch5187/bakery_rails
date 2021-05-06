@@ -31,6 +31,19 @@ RSpec.describe "Pie Ingredients New Page", type: :feature do
     click_on "Create New Ingredient"
 
     expect(current_path).to eq("/pies/ingredients/new")
-    expect(page).to have_content("Please fill out all fields")
+    expect(page).to have_content("Please fill out all fields and give the ingredient a unique name")
+  end
+
+  it "Only allows me to create an ingredient with a unique name" do
+    @butter = Ingredient.create(name: "Butter", kind: "Oil")
+    click_link("New Ingredient")
+
+    fill_in :name, with: "Butter"
+    fill_in :kind, with: "Oil"
+
+    click_on "Create New Ingredient"
+
+    expect(current_path).to eq("/pies/ingredients/new")
+    expect(page).to have_content("Please fill out all fields and give the ingredient a unique name")
   end
 end
