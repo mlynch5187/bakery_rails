@@ -10,7 +10,7 @@ RSpec.describe "Pie Ingredients New Page", type: :feature do
   it "It allows me to create a new ingredient" do
     expect(page).to have_link("Update Salt")
     click_link("Update Salt")
-    expect(current_path).to eq("/pies/ingredients/#{@salt.id}")
+    expect(current_path).to eq("/pies/ingredients/#{@salt.id}/edit")
 
     name = "Kosher Salt"
     kind = "Condiment"

@@ -3,7 +3,7 @@
 <% @ingredients.each do |ingredient| %>
   Name: <%= link_to "#{ingredient.name}", "/pies/ingredients/#{ingredient.id}" %>
   Kind: <%= "#{ingredient.kind}" %>
-  <%= link_to "Update #{ingredient.name}", "/pies/ingredients/#{ingredient.id}", method: :patch %></br></br>
+  <%= link_to "Update #{ingredient.name}", "/pies/ingredients/#{ingredient.id}/edit" %></br></br>
   <%= link_to "Delete #{ingredient.name}", "/pies/ingredients/#{ingredient.id}", method: :delete %></br></br>
 <% end %>
 
