@@ -19,6 +19,10 @@ class Pies::IngredientsController < ApplicationController
     end
   end
 
+  def edit
+    ingredient = Ingredient.find(params[:id])
+  end
+
   def update
     ingredient = Ingredient.find(params[:id])
     ingredient.update(ingredient_params)
