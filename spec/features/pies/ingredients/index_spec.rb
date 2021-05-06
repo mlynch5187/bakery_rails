@@ -21,7 +21,7 @@ RSpec.describe "Pie Ingredients Index", type: :feature do
     click_link("Delete Salt")
 
     expect(current_path).to eq("/pies/ingredients")
-    expect(page).to not_have_content("Salt")
+    expect(page).to_not have_content("Salt")
     expect(page).to have_content("Pepper")
   end
 end
