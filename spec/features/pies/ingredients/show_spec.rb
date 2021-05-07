@@ -15,4 +15,17 @@ RSpec.describe "Pie Ingredients Show Page", type: :feature do
     expect(page).to have_content("This ingredient is called Salt")
     expect(page).to have_content("This ingredient is a Condiment")
   end
+
+  it "I can delete an ingredient" do
+    click_link("Salt")
+
+    expect(page).to have_link("Delete Salt")
+    expect(page).to_not have_link("Delete Pepper")
+
+    click_link("Delete Salt")
+
+    expect(current_path).to eq("/pies/ingredients")
+    expect(page).to_not have_content("Salt")
+    expect(page).to have_content("Pepper")
+  end
 end
