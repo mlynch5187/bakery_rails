@@ -1,2 +1,3 @@
-<%= "This ingredient is called #{@ingredient.name}" %>
-<%= "This ingredient is a #{@ingredient.kind}" %>
+<%= "This ingredient is called #{@ingredient.name}" %></br>
+<%= "This ingredient is a #{@ingredient.kind}" %></br></br>
+<%= link_to "Delete #{@ingredient.name}", "/pies/ingredients/#{@ingredient.id}", method: :delete %>
