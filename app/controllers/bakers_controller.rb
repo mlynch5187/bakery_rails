@@ -1,5 +1,5 @@
-class BakersController
-
-  def index; end
-
+class BakersController < ApplicationController
+  def index
+    @bakers = Baker.all
+  end
 end
