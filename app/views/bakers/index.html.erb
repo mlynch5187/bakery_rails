@@ -1,0 +1,3 @@
+<% @bakers.each do |baker| %>
+  <%= link_to "#{baker.name}", "/bakers/#{baker.id}" %>
+<% end %>
