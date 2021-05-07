@@ -5,6 +5,7 @@ RSpec.describe "Bakers Index", type: :feature do
     @chef_john = Baker.create(name: "Chef John", job: "Head Chef")
     @chef_alex = Baker.create(name: "Chef Alex", job: "Sous Chef")
     visit "/bakers"
+  end
 
   it "It shows a list of baker names as links to show pages" do
     expect(page).to have_link("Chef John")
