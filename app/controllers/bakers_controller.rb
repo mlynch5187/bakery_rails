@@ -4,6 +4,6 @@ class BakersController < ApplicationController
   end
 
   def show
-    @baker = Baker.find(params[:baker_id])
+    @baker = Baker.find(params[:id])
   end
 end
