@@ -8,6 +8,7 @@ RSpec.describe "Bakers Index", type: :feature do
                                                 number_ingredients: 5,
                                                 bake_time: 120,
                                                 oven_temp: 300)
+    @strawberry_pie.ingredients.create(name: "Strawberry", kind: "Fruit")
     visit "/bakers"
   end
 
