@@ -1,3 +1,4 @@
 <% @bakers.each do |baker| %>
   <%= link_to "#{baker.name}", "/bakers/#{baker.id}" %>
+  <%= link_to "Delete #{baker.name}", "/bakers/#{baker.id}", method: :delete %>
 <% end %>
