@@ -4,6 +4,10 @@ RSpec.describe "Bakers Index", type: :feature do
   before(:each) do
     @chef_john = Baker.create(name: "Chef John", job: "Head Chef")
     @chef_alex = Baker.create(name: "Chef Alex", job: "Sous Chef")
+    @strawberry_pie = @chef_john.recipes.create(name: "Strawberry Pie",
+                                                number_ingredients: 5,
+                                                bake_time: 120,
+                                                oven_temp: 300)
     visit "/bakers"
   end
 
@@ -19,7 +23,7 @@ RSpec.describe "Bakers Index", type: :feature do
     expect(current_path).to eq("/bakers")
   end
 
-  it "I can delete a baker" do
+  it "I can delete a baker and their recipes" do
     expect(page).to have_link("Delete Chef John")
     expect(page).to have_link("Delete Chef Alex")
 
