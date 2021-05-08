@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Cakes ingredients index", type: :feature do
   before(:each) do
-    @cherry = Ingredient.create(name: "Cherry")
-    @blueberry = Ingredient.create(name: "Blueberry")
+    @cherry = Ingredient.create(name: "Cherry", kind: "Fruit")
+    @blueberry = Ingredient.create(name: "Blueberry", kind: "Fruit")
 
     visit "/cakes/ingredients"
   end
