@@ -14,4 +14,20 @@ class BakersController < ApplicationController
   end
 
   def new; end
+
+  def create
+    baker = Baker.create(baker_params)
+    if baker.save
+      redirect_to "/bakers"
+    else
+      flash[:notice] = "Please fill out all fields and give the ingredient a unique name"
+      redirect_to "/bakers/new"
+    end
+  end
+
+  private
+
+  def baker_params
+    params.permit(:name, :job, :age)
+  end
 end
