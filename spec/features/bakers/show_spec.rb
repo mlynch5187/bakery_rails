@@ -21,6 +21,6 @@ RSpec.describe "Baker Show Page", type: :feature do
 
     expect(page).to have_content("Chef John")
     expect(page).to have_content("Head Chef")
-    expect(page).to have_link("Strawberry Pie")
+    expect(page).to have_link("Recipes")
   end
 end
