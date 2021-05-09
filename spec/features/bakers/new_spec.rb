@@ -25,7 +25,6 @@ RSpec.describe "Bakers New Page", type: :feature do
   end
 
   it "It allows me to create a new baker only if all fields are filled" do
-    skip
     click_link("New Baker")
 
     fill_in :name, with: "Chef Sarah"
@@ -34,7 +33,7 @@ RSpec.describe "Bakers New Page", type: :feature do
 
     click_on "Create New Baker"
 
-    expect(current_path).to eq("/bakers/new")
+    expect(current_path).to eq("/bakers/new")    
     expect(page).to have_content("Please fill out all fields and give the baker a unique name")
   end
 

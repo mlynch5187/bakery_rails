@@ -20,7 +20,7 @@ class BakersController < ApplicationController
     if baker.save
       redirect_to "/bakers"
     else
-      flash[:notice] = "Please fill out all fields and give the ingredient a unique name"
+      flash[:notice] = "Please fill out all fields and give the baker a unique name"
       redirect_to "/bakers/new"
     end
   end
