@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Bakers Index", type: :feature do
   before(:each) do
-    @chef_john = Baker.create(name: "Chef John", job: "Head Chef")
-    @chef_alex = Baker.create(name: "Chef Alex", job: "Sous Chef")
+    @chef_john = Baker.create(name: "Chef John", job: "Head Chef", age: "54")
+    @chef_alex = Baker.create(name: "Chef Alex", job: "Sous Chef", age: "34")
     @strawberry_pie = @chef_john.recipes.create(name: "Strawberry Pie",
                                                 number_ingredients: 5,
                                                 bake_time: 120,

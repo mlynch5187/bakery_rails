@@ -25,7 +25,8 @@ RSpec.describe "Bakers New Page", type: :feature do
   end
 
   it "It allows me to create a new baker only if all fields are filled" do
-    click_link("New Ingredient")
+    skip
+    click_link("New Baker")
 
     fill_in :name, with: "Chef Sarah"
     fill_in :job, with: "Sous Chef"
@@ -38,6 +39,7 @@ RSpec.describe "Bakers New Page", type: :feature do
   end
 
   it "Only allows me to create a baker with a unique name" do
+    skip
     @chef_sarah = Baker.create(name: "Chef Sarah", job: "Sous Chef", age: "27")
     click_link("New Baker")
 
