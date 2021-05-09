@@ -33,12 +33,11 @@ RSpec.describe "Bakers New Page", type: :feature do
 
     click_on "Create New Baker"
 
-    expect(current_path).to eq("/bakers/new")    
+    expect(current_path).to eq("/bakers/new")
     expect(page).to have_content("Please fill out all fields and give the baker a unique name")
   end
 
   it "Only allows me to create a baker with a unique name" do
-    skip
     @chef_sarah = Baker.create(name: "Chef Sarah", job: "Sous Chef", age: "27")
     click_link("New Baker")
 
@@ -49,6 +48,6 @@ RSpec.describe "Bakers New Page", type: :feature do
     click_on "Create New Baker"
 
     expect(current_path).to eq("/bakers/new")
-    expect(page).to have_content("Please fill out all fields and give the ingredient a unique name")
+    expect(page).to have_content("Please fill out all fields and give the baker a unique name")
   end
 end
