@@ -12,4 +12,6 @@ class BakersController < ApplicationController
     baker.destroy
     redirect_to "/bakers"
   end
+
+  def new; end
 end

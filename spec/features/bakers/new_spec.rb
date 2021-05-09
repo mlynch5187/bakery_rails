@@ -15,7 +15,7 @@ RSpec.describe "Bakers New Page", type: :feature do
     age = "27"
 
     fill_in :name, with: name
-    fill_in :kind, with: kind
+    fill_in :job, with: job
     fill_in :age, with: age
 
     click_on "Create New Baker"
