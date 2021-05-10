@@ -1,0 +1,16 @@
+<h1>Edit <%=link_to @baker.name, "/bakers/#{@baker.id}" %></h1>
+
+<center>
+  <%= form_tag "/bakers/#{@baker.id}", method: :patch  do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name, "#{@baker.name}"%>
+
+    <%= label_tag :job %>
+    <%= text_field_tag :job, "#{@baker.job}" %>
+
+    <%= label_tag :age %>
+    <%= text_field_tag :age, "#{@baker.age}" %>
+
+    <%= submit_tag 'Update Baker' %>
+  <% end %>
+</center>
