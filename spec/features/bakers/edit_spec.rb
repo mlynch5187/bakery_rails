@@ -26,7 +26,6 @@ RSpec.describe "Baker edit Page", type: :feature do
     expect(current_path).to eq("/bakers/#{@chef_john.id}")
     expect(page).to have_content("Chef Johnathan")
     expect(page).to have_content("55")
-    expect(page).to_not have_content("54")
-    expect(page).to_not have_content("Chef John")
+    expect(page).to_not have_content("54")    
   end
 end
