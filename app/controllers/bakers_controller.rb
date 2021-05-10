@@ -25,6 +25,10 @@ class BakersController < ApplicationController
     end
   end
 
+  def edit
+    @baker = Baker.find(params[:id])
+  end
+
   private
 
   def baker_params
