@@ -29,6 +29,17 @@ class BakersController < ApplicationController
     @baker = Baker.find(params[:id])
   end
 
+  def update
+    baker = Baker.find(params[:id])
+    baker.update(baker_params)
+    if baker.save
+      redirect_to "/bakers/#{baker.id}"
+    else
+      flash[:notice] = "Please fill out all fields and give the baker a unique name"
+      redirect_to "/bakers/#{baker.id}/edit"
+    end
+  end
+
   private
 
   def baker_params
