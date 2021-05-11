@@ -1,5 +1,5 @@
 <h1>Edit <%=link_to @baker.name, "/bakers/#{@baker.id}" %></h1>
-
+<%= flash[:notice]%>
 <center>
   <%= form_tag "/bakers/#{@baker.id}", method: :patch  do %>
     <%= label_tag :name %>
