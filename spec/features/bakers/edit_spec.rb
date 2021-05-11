@@ -26,6 +26,21 @@ RSpec.describe "Baker edit Page", type: :feature do
     expect(current_path).to eq("/bakers/#{@chef_john.id}")
     expect(page).to have_content("Chef Johnathan")
     expect(page).to have_content("55")
-    expect(page).to_not have_content("54")    
+    expect(page).to_not have_content("54")
+  end
+
+  it "All fields must be filled to update a baker" do
+    expect(page).to have_link("Update Chef John")
+    click_link("Update Chef John")
+    expect(current_path).to eq("/bakers/#{@chef_john.id}/edit")
+
+    fill_in :name, with: ""
+    fill_in :job, with: "Head Chef"
+    fill_in :age, with: "55"
+
+    click_on "Update Baker"
+
+    expect(current_path).to eq("/bakers/#{@chef_john.id}/edit")
+    expect(page).to have_content("Please fill out all fields and give the baker a unique name")    
   end
 end
