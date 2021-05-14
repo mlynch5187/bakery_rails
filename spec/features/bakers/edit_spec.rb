@@ -41,7 +41,6 @@ RSpec.describe "Baker edit Page", type: :feature do
     click_on "Update Baker"
 
     expect(current_path).to eq("/bakers/#{@chef_john.id}/edit")
-    save_and_open_page
     expect(page).to have_content("Please fill out all fields and give the baker a unique name")
   end
 end
