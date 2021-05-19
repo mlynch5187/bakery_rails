@@ -9,12 +9,12 @@ RSpec.describe "Bakers Index", type: :feature do
                                                 bake_time: 120,
                                                 oven_temp: 300)
     @strawberry = @strawberry_pie.ingredients.create(name: "Strawberry", kind: "Fruit")
-    visit "/bakers/#{@chef_john.id}/recipes"
+    visit "/bakers/#{@chef_john.id}"
   end
 
   it "It shows a list of baker recipes as links to recipe show pages" do
-    click_link("Chef John")
-    expect(current_path).to eq("/bakers/#{@chef_john.id}")
+    click_link("Recipes")
+    expect(current_path).to eq("/bakers/#{@chef_john.id}/recipes")
 
     expect(page).to have_link("Strawberry Pie")
     click_link("Strawberry Pie")
