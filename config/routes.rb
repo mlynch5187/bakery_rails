@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :bakers do
-    resources :recipes, only: [:index]
+    resources :recipes
   end
 
 end
