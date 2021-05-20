@@ -12,7 +12,7 @@ RSpec.describe "Bakers Index", type: :feature do
     visit "/bakers/#{@chef_john.id}"
   end
 
-  it "It shows a list of baker recipes as links to recipe show pages" do
+  it "It shows a list of baker recipes as links to recipe show pages" do    
     click_link("Recipes")
     expect(current_path).to eq("/bakers/#{@chef_john.id}/recipes")
 
